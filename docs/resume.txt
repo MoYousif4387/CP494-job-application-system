@@ -1,0 +1,99 @@
+MAHMOUD YOUSIF
+Computer Science Student
+Wilfrid Laurier University
+Email: 7wyb4387@gmail.com
+GitHub: @MoYousif4387
+
+SUMMARY
+Computer Science student specializing in AI/ML and software engineering. Currently developing a multi-agent job search automation system for CP494 Applied Research project. Strong foundation in full-stack development, data engineering, and workflow automation.
+
+TECHNICAL SKILLS
+
+Programming Languages:
+- Python (Advanced): FastAPI, Flask, Django, Pandas, NumPy
+- Java (Intermediate): Spring Boot, Object-oriented programming
+- C++ (Intermediate): Data structures, algorithms
+- JavaScript (Intermediate): React, Node.js, Express
+- SQL: MySQL, PostgreSQL, SQLite
+
+AI & Machine Learning:
+- CrewAI: Multi-agent system development
+- Groq API: LLM integration and inference
+- LangChain: AI application frameworks
+- Ollama: Local model deployment
+- TensorFlow/PyTorch: Basic ML model training
+
+Tools & Technologies:
+- Version Control: Git, GitHub
+- Containerization: Docker
+- Databases: SQLite, MySQL, PostgreSQL, Redis
+- Workflow Automation: n8n
+- Web Frameworks: Gradio, FastAPI, Flask
+- Data Processing: Pandas, NumPy, Apache Airflow
+- Cloud Platforms: AWS (basic), Azure (basic)
+- Message Queues: Kafka (basic), Redis
+
+EDUCATION
+
+Bachelor of Science - Computer Science
+Wilfrid Laurier University
+Expected Graduation: 2026
+Relevant Coursework: CP493, CP494 (Applied Research in Computing)
+
+PROJECTS
+
+Multi-Agent Job Application System (Current - CP494)
+- Developed AI-powered job search automation using CrewAI multi-agent framework
+- Integrated JobSpy for web scraping job postings from Indeed, LinkedIn, and government portals
+- Built FastAPI backend and Gradio web interface for job analysis and application tracking
+- Implemented Groq LLM integration for intelligent job-candidate matching
+- Technologies: Python, CrewAI, Groq, FastAPI, Gradio, SQLite, n8n
+
+n8n Workflow Automation
+- Created automated workflows for job discovery, analysis, and application
+- Integrated multiple job boards and AI services
+- Technologies: n8n, webhooks, API integrations
+
+EXPERIENCE
+
+Advanced Analytics & BI Intern
+Sun Life Financial
+- Built end-to-end analytics systems serving 290+ users
+- Optimized database queries and improved system performance
+- Technologies: Python, SQL, business intelligence tools
+
+Data Engineering Intern
+CIBC
+- Contributed to large-scale distributed systems for financial data processing
+- Worked with data pipelines and ETL processes
+- Technologies: Python, SQL, distributed systems
+
+RELEVANT SKILLS FOR INTERNSHIPS
+
+✓ Strong programming foundation (Python, Java, C++)
+✓ Experience with real-world data systems (internships at Sun Life, CIBC)
+✓ AI/ML project experience (CrewAI, Groq, LangChain)
+✓ Full-stack development (FastAPI, React, Gradio)
+✓ Database design and optimization (SQLite, MySQL, PostgreSQL)
+✓ RESTful API development
+✓ Version control and collaboration (Git, GitHub)
+✓ Problem-solving and algorithmic thinking
+✓ Strong learning ability and adaptability
+✓ Experience with agile development and research methodologies
+
+STRENGTHS
+
+- Quick learner with ability to pick up new technologies rapidly
+- Strong analytical and problem-solving skills
+- Experience working in professional environments (Sun Life, CIBC)
+- Self-motivated and able to work independently
+- Good communication and documentation skills
+- Passionate about AI/ML and automation technologies
+
+INTERESTS
+
+- Artificial Intelligence and Machine Learning
+- Distributed Systems and Scalability
+- Workflow Automation
+- Data Engineering
+- Open Source Contribution

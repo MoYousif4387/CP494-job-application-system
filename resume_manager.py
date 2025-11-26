@@ -15,9 +15,11 @@ import requests
 from pathlib import Path
 
 class ResumeManager:
-    def __init__(self, db_path="database/applications.db", groq_api_key=None):
+    def __init__(self, db_path="database/applications.db", groq_api_key=None, mistral_api_key=None, preferred_api="mistral"):
         self.db_path = db_path
         self.groq_api_key = groq_api_key or os.getenv("GROQ_API_KEY")
+        self.mistral_api_key = mistral_api_key or os.getenv("MISTRAL_API_KEY")
+        self.preferred_api = preferred_api  # "mistral", "groq", or "auto"
         self.uploads_dir = Path("uploads/resumes")
         self.uploads_dir.mkdir(parents=True, exist_ok=True)
 
@@ -69,6 +71,73 @@ class ResumeManager:
             return self.extract_text_from_txt(file_path)
         else:
             raise ValueError(f"Unsupported file type: {file_type}")
+
+    def extract_skills_smart(self, resume_text: str) -> List[str]:
+        """Smart skill extraction with API fallback chain"""
+        if self.preferred_api == "mistral":
+            return self.extract_skills_with_mistral(resume_text)
+        elif self.preferred_api == "groq":
+            return self.extract_skills_with_groq(resume_text)
+        else:  # "auto" - try Mistral first, then Groq, then fallback
+            try:
+                if self.mistral_api_key:
+                    return self.extract_skills_with_mistral(resume_text)
+                elif self.groq_api_key:
+                    return self.extract_skills_with_groq(resume_text)
+            except:
+                pass
+            return self.extract_skills_fallback(resume_text)
+
+    def extract_skills_with_mistral(self, resume_text: str) -> List[str]:
+        """Extract skills from resume text using Mistral API"""
+        if not self.mistral_api_key:
+            print("No Mistral API key available, trying Groq or fallback")
+            return self.extract_skills_with_groq(resume_text)
+
+        try:
+            from mistralai import Mistral
+
+            client = Mistral(api_key=self.mistral_api_key)
+
+            prompt = f"""Extract technical skills, programming languages, frameworks, tools, and technologies from this resume.
+Return ONLY a JSON array of skills, no other text.
+
+Resume text:
+{resume_text[:2000]}
+
+Example format: ["Python", "JavaScript", "React", "SQL", "Machine Learning"]
+"""
+
+            response = client.chat.complete(
+                model="mistral-small-latest",
+                messages=[{
+                    "role": "user",
+                    "content": prompt
+                }],
+                temperature=0.1,
+                max_tokens=500
+            )
+
+            if response and response.choices:
+                content = response.choices[0].message.content.strip()
+
+                # Try to parse as JSON
+                try:
+                    import json
+                    skills = json.loads(content)
+                    if isinstance(skills, list):
+                        return [skill.strip() for skill in skills if skill.strip()]
+                except json.JSONDecodeError:
+                    # If not valid JSON, try to extract from text
+                    return self.extract_skills_from_text_response(content)
+
+        except Exception as e:
+            print(f"Error using Mistral API for skill extraction: {e}")
+            # Fallback to Groq
+            return self.extract_skills_with_groq(resume_text)
+
+        # Ultimate fallback to local extraction
+        return self.extract_skills_fallback(resume_text)
 
     def extract_skills_with_groq(self, resume_text: str) -> List[str]:
         """Extract skills from resume text using Groq API"""
@@ -255,8 +324,8 @@ class ResumeManager:
             if not resume_text.strip():
                 raise ValueError("Could not extract text from resume file")
 
-            # Extract skills and contact info
-            skills = self.extract_skills_with_groq(resume_text)
+            # Extract skills and contact info using smart API selection
+            skills = self.extract_skills_smart(resume_text)
             contact_info = self.extract_contact_info(resume_text)
 
             # Save to database

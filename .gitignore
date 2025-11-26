@@ -52,6 +52,12 @@ database/applications.db
 # Logs
 *.log
 logs/
+*_logs.txt
+*_logs_*.txt
+scraper_logs.txt
+ui_debug.txt
+ui_final.txt
+ui_restart.txt
 
 # Node.js (for n8n)
 node_modules/
@@ -95,6 +101,7 @@ htmlcov/
 
 # n8n Data
 .n8n/
+n8n-data/
 
 # Application Specific
 test_gradio_fix.py

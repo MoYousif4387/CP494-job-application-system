@@ -294,3 +294,5 @@ if __name__ == "__main__":
     print(f"\nFound {len(jobs)} jobs:")
     for job in jobs:
         print(f"- {job['title']} at {job['company']} (Score: {job['relevance_score']})")
+
+

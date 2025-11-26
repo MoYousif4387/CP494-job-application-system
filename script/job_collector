@@ -1,0 +1,57 @@
+import csv
+from jobspy import scrape_jobs
+import sqlite3
+from datetime import datetime
+import pandas as pd
+
+def collect_jobs(search_term, location="Toronto, ON", results_wanted=100):
+    """Collect jobs from multiple sources"""
+    
+    print(f"🔍 Searching for: {search_term} in {location}")
+    
+    jobs = scrape_jobs(
+        site_name=["indeed", "linkedin", "zip_recruiter"],
+        search_term=search_term,
+        location=location,
+        results_wanted=results_wanted,
+        hours_old=72,  # Last 3 days only
+        country_indeed='CANADA',
+        is_remote=True  # Include remote jobs
+    )
+    
+    print(f"✅ Found {len(jobs)} jobs")
+    
+    # Add timestamp
+    jobs['collected_at'] = datetime.now().isoformat()
+    
+    return jobs
+
+def save_to_database(jobs_df, db_path="database/jobs.db"):
+    """Save jobs to SQLite database"""
+    
+    conn = sqlite3.connect(db_path)
+    
+    # Create table if not exists
+    jobs_df.to_sql('raw_jobs', conn, if_exists='append', index=False)
+    
+    conn.commit()
+    conn.close()
+    
+    print(f"💾 Saved {len(jobs_df)} jobs to database")
+
+if __name__ == "__main__":
+    # Test with your actual search criteria
+    jobs = collect_jobs(
+        search_term="software engineer intern",
+        location="Toronto, ON",
+        results_wanted=50
+    )
+    
+    # Save to CSV for inspection
+    jobs.to_csv("database/jobs_sample.csv", index=False)
+    
+    # Save to database
+    save_to_database(jobs)
+    
+    print("\n📊 Sample job data:")
+    print(jobs[['title', 'company', 'location', 'job_url']].head())

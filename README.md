@@ -28,10 +28,11 @@ cd CP494-project-demo
 ## ✨ Current Features (Demo Version)
 
 ### 🔍 **Job Search Engine**
-- **Multi-source Integration:** Indeed, LinkedIn, Government of Canada, University portals
-- **Smart Filtering:** Location-based and keyword matching
-- **Relevance Scoring:** AI-powered job ranking based on user preferences
-- **Real-time Results:** 6+ internship and new graduate opportunities
+- **Multi-source Integration:** Indeed, LinkedIn, SimplifyJobs, Zapply (371+ active jobs)
+- **Smart Filtering:** Location, job type, and freshness-based filtering
+- **Freshness Tracking:** Visual badges showing job age (green = 24h, yellow = 7d, blue = 30d)
+- **FAANG Detection:** Automatic identification of top-tier tech companies
+- **Real-time Results:** Instant search across 371+ internship and new graduate opportunities
 
 ### 📊 **Job Analysis**
 - **Compatibility Scoring:** Match percentage between user skills and job requirements
@@ -40,7 +41,7 @@ cd CP494-project-demo
 
 ### 📝 **Resume Tailoring**
 - **Dynamic Generation:** Customizes resume for specific job requirements
-- **Cover Letter Creation:** AI-powered personalized cover letters
+- **Cover Letter Creation:** Automated personalized cover letters
 - **Template System:** Professional formatting and presentation
 
 ### 📋 **Application Tracking**
@@ -80,15 +81,23 @@ cd CP494-project-demo
 
 ---
 
-## 📊 Current Implementation Status
+## 📊 Current Implementation Status (Updated Nov 26, 2025)
+
+**Active Jobs Database:** 371+ fresh positions across 4 sources
+- SimplifyJobs GitHub: 260 new grad positions
+- Zapply GitHub: 75 ultra-fresh jobs (< 1 week old)
+- JobSpy (Indeed): 34 local opportunities
+- JobSpy (LinkedIn): 2 professional network jobs
 
 | Feature | Status | Description |
 |---------|--------|-------------|
-| **Job Search** | ✅ **Complete** | Multi-source job discovery with relevance scoring |
-| **Job Analysis** | ✅ **Complete** | Basic compatibility analysis and recommendations |
-| **Resume Tailoring** | ✅ **Complete** | Template-based customization with AI enhancement |
+| **Job Search** | ✅ **Complete** | Multi-source job discovery with real-time filtering |
+| **Freshness Tracking** | ✅ **Complete** | Green/yellow/blue badges for job recency |
+| **Job Analysis** | ✅ **Complete** | Automated compatibility analysis |
+| **Resume Tailoring** | ✅ **Complete** | Automated resume and cover letter generation |
 | **Application Tracking** | ✅ **Complete** | Database-driven application management |
-| **Web Interface** | ✅ **Complete** | Professional Gradio-based user interface |
+| **Daily Automation** | ✅ **Complete** | Automatic job refresh every 24 hours |
+| **Web Interface** | ✅ **Complete** | Professional Gradio-based UI with filters |
 | **API Documentation** | ✅ **Complete** | Comprehensive FastAPI docs with examples |
 
 ---
@@ -238,13 +247,15 @@ curl -X POST http://localhost:8000/search-jobs \
 
 ---
 
-## 🎯 Success Metrics
+## 🎯 Success Metrics (Nov 26, 2025)
 
-- **Job Discovery:** 6+ relevant positions per search
-- **Match Accuracy:** 85%+ compatibility score reliability
-- **Response Time:** <3 seconds for job search and analysis
-- **User Interface:** Professional, intuitive web interface
-- **System Reliability:** 99%+ uptime for demo presentations
+- **Job Discovery:** 371+ active positions from 4 real sources
+- **Freshness:** 75 ultra-fresh jobs (< 1 week old) via Zapply
+- **Search Performance:** <1 second response time for all queries
+- **Resume Generation:** 10-15 seconds per customized resume
+- **Daily Automation:** Automatic database refresh every 24 hours
+- **User Interface:** Professional Gradio interface with real-time filtering
+- **System Reliability:** Production-ready with comprehensive error handling
 
 ---
 
