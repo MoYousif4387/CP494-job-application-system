@@ -78,6 +78,7 @@ Thumbs.db
 uploads/
 uploads/resumes/
 *.pdf
+!docs/paper.pdf
 *.docx
 
 # Temporary Files
