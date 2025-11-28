@@ -1,12 +1,12 @@
-# 🚀 CP494 Quick Start Guide
-**Updated:** October 8, 2025
+# 🚀 Quick Start Guide
+**Updated:** January 2025
 
 ---
 
 ## ⚡ FASTEST WAY TO START
 
 ```bash
-cd /Users/mahmoud/job-search-ai/CP494-project
+cd job-search-ai-system
 ./START_SERVICES.sh
 ```
 
