@@ -5,7 +5,11 @@ import sqlite3
 import json
 import os
 from datetime import datetime
+from dotenv import load_dotenv
 from resume_tailor import tailor_resume_with_mistral
+
+# Load environment variables from parent directory
+load_dotenv(dotenv_path="../.env")
 
 # Database helper functions
 def init_database():

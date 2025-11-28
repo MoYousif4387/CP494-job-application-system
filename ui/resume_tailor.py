@@ -6,6 +6,10 @@ Implements the user's exact prompt template for LaTeX resume generation
 import os
 import requests
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from parent directory
+load_dotenv(dotenv_path="../.env")
 
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY", "")
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
