@@ -173,10 +173,18 @@ async def search_jobs(request: JobSearchRequest):
             zapply_df = pd.DataFrame()
             print("⚠️  No Zapply jobs table found")
 
+        # Get Zapply SWE 2026 jobs (NEW!)
+        try:
+            zapply_swe_df = pd.read_sql("SELECT * FROM zapply_swe_2026_jobs", conn)
+            print(f"📊 Found {len(zapply_swe_df)} Zapply SWE 2026 jobs")
+        except:
+            zapply_swe_df = pd.DataFrame()
+            print("⚠️  No Zapply SWE 2026 jobs table found")
+
         conn.close()
 
-        # Combine all three sources
-        all_dfs = [df for df in [jobspy_df, github_df, zapply_df] if len(df) > 0]
+        # Combine all four sources
+        all_dfs = [df for df in [jobspy_df, github_df, zapply_df, zapply_swe_df] if len(df) > 0]
 
         if len(all_dfs) > 0:
             jobs_df = pd.concat(all_dfs, ignore_index=True)

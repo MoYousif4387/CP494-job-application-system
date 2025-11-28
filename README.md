@@ -1,15 +1,13 @@
-# CP494 - Automated Job Application System
+# Automated Job Application System
 
-**Student:** Mahmoud Yousif (MoYousif4387)
-**Course:** CP494 - Applied Research in Computing
-**Professor:** Dr. Emad Amin Mohammed
-**Email:** 7wyb4387@gmail.com
+**Developer:** Mahmoud Yousif
+**GitHub:** [@MoYousif4387](https://github.com/MoYousif4387)
 
 ---
 
 ## 🎯 Project Overview
 
-An AI-powered job application automation system that streamlines the entire job search process from discovery to application submission. The system integrates multiple job boards, performs intelligent job-candidate matching, and generates tailored resumes and cover letters using advanced AI technologies.
+An intelligent job application automation system that streamlines the entire job search process from discovery to application submission. The system integrates multiple job boards, performs intelligent job-candidate matching, and generates tailored resumes and cover letters automatically.
 
 ## 🚀 **DEMO ACCESS**
 
@@ -259,43 +257,33 @@ curl -X POST http://localhost:8000/search-jobs \
 
 ---
 
-## 🤝 Collaboration & Development
+## 🤝 Development Approach
 
-**Professor Access:**
-- **Repository:** https://github.com/MoYousif4387/CP494-job-application-system
-- **Collaborator Invitation:** Sent to emad.amin.mohammed@gmail.com
-- **Demo Access:** Available at provided URLs after running `start_demo.sh`
-
-**Development Approach:**
-- **Agile Methodology:** Iterative development with working prototypes
+**Methodology:**
+- **Iterative Development:** Built in phases with working prototypes
 - **Version Control:** Git-based with clear commit messages
 - **Documentation:** Comprehensive code and API documentation
-- **Testing:** Continuous testing with real job data
+- **Testing:** Continuous testing with real job data from multiple sources
 
 ---
 
-## 📞 Contact & Support
+## 📞 Contact
 
-**Student Contact:**
+**Developer:**
 - **Name:** Mahmoud Yousif
-- **Email:** 7wyb4387@gmail.com
 - **GitHub:** [@MoYousif4387](https://github.com/MoYousif4387)
-
-**Professor Contact:**
-- **Email:** emad.amin.mohammed@gmail.com
+- **Repository:** [CP494-job-application-system](https://github.com/MoYousif4387/CP494-job-application-system)
 
 ---
 
-## 📄 License & Acknowledgments
+## 📄 Technologies & Acknowledgments
 
-**Academic Use:** This project is developed for CP494 coursework and research purposes.
-
-**Technologies Used:**
-- Gradio (Interface framework)
-- FastAPI (API framework)
-- n8n (Workflow automation)
-- Groq (AI/LLM services)
-- SQLite (Database)
+**Tech Stack:**
+- **Frontend:** Gradio (Python-based web interface)
+- **Backend:** FastAPI (RESTful API)
+- **Database:** SQLite
+- **Job Sources:** JobSpy, SimplifyJobs, Zapply
+- **Automation:** Python schedulers
 
 ---
 
