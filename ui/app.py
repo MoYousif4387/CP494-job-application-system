@@ -467,7 +467,7 @@ def create_interface():
         pass  # Database might already exist
 
     with gr.Blocks(title="Job Application System", theme=gr.themes.Soft()) as app:
-        gr.Markdown("# 🚀 CP494 - Automated Job Application System")
+        gr.Markdown("# 🚀 Automated Job Application System")
         gr.Markdown("Your AI-powered job search and application assistant")
 
         with gr.Tab("🔍 Search Jobs"):
